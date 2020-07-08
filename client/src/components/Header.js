@@ -13,8 +13,6 @@ import {
   Box,
 } from "@material-ui/core";
 import Menu from "@material-ui/icons/Menu";
-
-import { Home } from "@material-ui/icons";
 import Drawer from "@material-ui/core/Drawer";
 import logo from "../assets/image/logo.png";
 
@@ -32,9 +30,6 @@ const menuItem = [
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
   },
   title: {
     flexGrow: 1,
@@ -70,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles();
-  const preventDefault = (event) => event.preventDefault();
   const [dropDown, setDropdown] = useState({
     top: false,
   });
@@ -80,11 +74,7 @@ const Header = () => {
   };
 
   const dropDownMenu = (anchor) => (
-    <Box
-      // style={classes.BackdropProps}
-      component="div"
-      onClick={toggleDrawer(anchor, false)}
-    >
+    <Box component="div" onClick={toggleDrawer(anchor, false)}>
       <Divider />
       <List>
         <Box paddingTop="7rem"></Box>

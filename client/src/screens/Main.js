@@ -1,10 +1,13 @@
 import React from "react";
-import Header from "../components/Header";
 import pic from "../assets/image/pic1.jpg";
+import { Helmet } from "react-helmet";
 
 const Main = () => {
   return (
     <>
+      <Helmet>
+        <meta name="robots" content="noindex" />
+      </Helmet>
       <div>
         {/* <Header /> */}
         <img src={pic} alt="picture" width="100%" height="auto" />

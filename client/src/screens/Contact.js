@@ -1,10 +1,13 @@
 import React from "react";
 import contactus from "../assets/image/contact-us.png";
-import Header from "../components/Header";
+import { Helmet } from "react-helmet";
 import Form from "../components/EmailForm";
 const Contact = () => {
   return (
     <>
+      <Helmet>
+        <meta name="robots" content="noindex" />
+      </Helmet>
       {/* image */}
       <img src={contactus} alt="picture" width="100%" height="auto" />
       {/* contact info */}
