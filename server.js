@@ -19,7 +19,9 @@ mongoose
 app.use(express.json({ extended: false }));
 
 app.use("/api/email", require("./routes/email"));
-app.get("/", (req, res) => res.send("API running"));
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/users", require("./routes/user"));
+// app.get("/", (req, res) => res.send("API running"));
 
 if (process.env.NODE_ENV === "production") {
   // Set static folder
@@ -34,3 +36,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
   console.log(`Server started on: http://localhost:${PORT}`)
 );
+
+// "email":"test@test.com",
+// "password":"12345678"
+// "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYwNTI3MTIwMGUyMmQ2YzI2MDU5ODA0In0sImlhdCI6MTU5NDE3MzIwMiwiZXhwIjoxNTk0NTMzMjAyfQ.krMnCn4DBPWGJKMWPEgpU4eoQVToPoK0ckS3Q0ITdlY"
