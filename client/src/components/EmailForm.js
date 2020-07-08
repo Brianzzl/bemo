@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const EmailForm = () => {
   const [formData, setFormData] = useState({
@@ -13,8 +14,15 @@ const EmailForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
     console.log(formData);
+    axios
+      .post("api/email/send", { ...formData })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <>
